@@ -1,0 +1,99 @@
+/* בסיס */
+:root{
+  --bg:#0f172a;
+  --card:#111827;
+  --text:#e5e7eb;
+  --muted:#94a3b8;
+  --accent:#22d3ee;
+  --accent-2:#f472b6;
+}
+
+*{box-sizing:border-box}
+html,body{margin:0;padding:0;font-family:'Heebo',system-ui,Segoe UI,Arial}
+body{background:linear-gradient(180deg,#0b1223,#0f172a);color:var(--text);line-height:1.6}
+
+a{color:var(--accent)}
+a:hover{opacity:.9}
+
+.site-header,.site-footer{
+  background:rgba(17,24,39,.6);
+  backdrop-filter:saturate(1.2) blur(6px);
+  border-bottom:1px solid rgba(148,163,184,.2);
+  position:sticky; top:0; z-index:100;
+}
+.site-footer{position:static; border-top:1px solid rgba(148,163,184,.2); margin-top:3rem}
+
+.branding{display:flex; align-items:center; gap:.75rem; padding:1rem 1.25rem}
+.logo{border-radius:14px}
+
+.navbar{display:flex; flex-wrap:wrap; gap:.5rem 1rem; padding:0 1.25rem 1rem}
+.navbar a{padding:.5rem .75rem; border-radius:12px; text-decoration:none; color:var(--text); border:1px solid transparent}
+.navbar a.active,.navbar a:hover{border-color:rgba(148,163,184,.35); background:rgba(148,163,184,.08)}
+
+.hero{display:grid; grid-template-columns:1.2fr .8fr; gap:2rem; padding:2rem; align-items:center}
+.hero .yt{width:100%; aspect-ratio:16/9; border:0; border-radius:18px; box-shadow:0 10px 30px rgba(0,0,0,.35)}
+.hero-content h2{font-size:clamp(1.6rem,3vw,2.4rem); margin:.25rem 0}
+.btn{display:inline-block; padding:.7rem 1rem; margin-inline-end:.5rem; border-radius:14px; background:linear-gradient(45deg,var(--accent),var(--accent-2)); color:#0b1223; font-weight:700; text-decoration:none; border:0; cursor:pointer}
+.btn-alt{background:transparent; color:var(--text); border:1px solid rgba(148,163,184,.35)}
+.text-link{color:var(--accent-2); text-decoration:none}
+
+.features{padding:1rem 2rem}
+.feature-list{display:grid; grid-template-columns:repeat(3,1fr); gap:.75rem}
+.feature-list li{background:rgba(17,24,39,.6); border:1px solid rgba(148,163,184,.2); border-radius:14px; padding:1rem}
+
+.cards-grid{display:grid; grid-template-columns:repeat(3,1fr); gap:1.25rem; padding:1.5rem 2rem}
+.card{background:var(--card); border:1px solid rgba(148,163,184,.2); border-radius:18px; overflow:hidden; transform:translateY(0); transition:transform .2s ease}
+.card:hover{transform:translateY(-6px)}
+.card img{display:block; width:100%; height:240px; object-fit:cover}
+.card-body{padding:1rem}
+
+.cta-aside{background:rgba(17,24,39,.5); border:1px dashed rgba(148,163,184,.3); margin:1rem 2rem; padding:1rem 1.25rem; border-radius:16px}
+
+.media-embed{padding:1rem 2rem; display:grid; gap:1rem}
+.media-embed .map{width:100%; min-height:360px; border:0; border-radius:14px}
+
+.table{width:100%; border-collapse:collapse; background:rgba(17,24,39,.5); border-radius:14px; overflow:hidden}
+.table th,.table td{padding:.6rem .8rem; border-bottom:1px solid rgba(148,163,184,.2); text-align:right}
+.table thead th{background:rgba(148,163,184,.15)}
+
+.subnav{display:flex; gap:.5rem; flex-wrap:wrap; padding:0 1.25rem}
+.subnav a{padding:.4rem .7rem; border:1px solid rgba(148,163,184,.3); border-radius:12px; text-decoration:none; color:var(--text)}
+
+.cards-list{display:flex; gap:.5rem; flex-wrap:wrap; list-style:disc inside; background:rgba(17,24,39,.5); padding:1rem; border-radius:14px}
+
+.gallery-grid{display:grid; grid-template-columns:repeat(3,1fr); gap:.75rem; padding:1rem 2rem}
+.gallery-grid figure{margin:0; background:rgba(17,24,39,.5); border:1px solid rgba(148,163,184,.15); border-radius:14px; overflow:hidden}
+.gallery-grid img{display:block; width:100%; height:220px; object-fit:cover}
+.gallery-grid figcaption{padding:.5rem .75rem; color:var(--muted); font-size:.9rem}
+
+.tool-grid{display:grid; grid-template-columns:repeat(3,1fr); gap:1rem; padding:1rem 2rem}
+.tool-card{background:var(--card); border:1px solid rgba(148,163,184,.2); border-radius:16px; padding:1rem}
+.tool-card .btn{margin-top:.5rem}
+
+.content{padding:1rem 2rem}
+.contact-form{background:rgba(17,24,39,.5); border:1px solid rgba(148,163,184,.2); border-radius:16px; padding:1rem}
+.contact-form label{display:block; margin:.6rem 0}
+.contact-form input,.contact-form select,.contact-form textarea{width:100%; padding:.6rem .7rem; border-radius:12px; border:1px solid rgba(148,163,184,.35); background:#0b1223; color:var(--text)}
+.contact-form fieldset{border:1px solid rgba(148,163,184,.35); border-radius:12px; padding:1rem}
+.contact-form fieldset.inline label{display:inline-flex; gap:.4rem; margin-inline-end:1rem}
+
+/* אנימציות */
+@keyframes fadeInUp{from{opacity:0; transform:translateY(10px)} to{opacity:1; transform:translateY(0)}}
+.hero,.cards-grid .card,.gallery-grid figure,.tool-card{animation:fadeInUp .5s ease both}
+
+/* רספונסיביות */
+@media (max-width: 1024px){
+  .hero{grid-template-columns:1fr}
+  .feature-list{grid-template-columns:repeat(2,1fr)}
+  .cards-grid{grid-template-columns:repeat(2,1fr)}
+  .gallery-grid{grid-template-columns:repeat(2,1fr)}
+  .tool-grid{grid-template-columns:repeat(2,1fr)}
+}
+
+@media (max-width: 768px){
+  .feature-list{grid-template-columns:1fr}
+  .cards-grid{grid-template-columns:1fr}
+  .gallery-grid{grid-template-columns:1fr}
+  .tool-grid{grid-template-columns:1fr}
+  .navbar{gap:.25rem}
+}

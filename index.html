@@ -1,0 +1,110 @@
+<!doctype html>
+<html lang="he" dir="rtl">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>טיולים בעולם – דף הבית</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Heebo:wght@300;400;600;800&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="styles.css" />
+</head>
+<body>
+  <header class="site-header">
+    <div class="branding">
+      <img src="https://picsum.photos/seed/travel/60/60" alt="לוגו טיולים" class="logo">
+      <h1>טיולים בעולם</h1>
+    </div>
+    <nav class="navbar" aria-label="ניווט ראשי">
+      <a href="index.html" class="active">בית</a>
+      <a href="destinations.html">יעדים</a>
+      <a href="gallery.html">גלריה</a>
+      <a href="tools.html">כלים</a>
+      <a href="about.html">אודות</a>
+      <a href="contact.html">צור קשר</a>
+    </nav>
+  </header>
+
+  <main>
+    <section class="hero">
+      <div class="hero-content">
+        <h2>תכננו את ההרפתקה הבאה שלכם</h2>
+        <p>ביחד נבחר יעד שיתאים בול לסגנון שלכם! </p>
+        <a class="btn" href="#why-us">למה אנחנו?</a>
+        <a class="btn btn-alt" href="destinations.html">התחילו ביעדים</a>
+      </div>
+      <div class="hero-media">
+       <iframe class="yt"
+        src="https://www.youtube.com/embed/nEu50aThOj4"
+        title="Your Video"
+        allowfullscreen></iframe>
+      </div>
+    </section>
+
+    <section id="why-us" class="features">
+      <h3>מה באתר</h3>
+      <ul class="feature-list">
+        <li><strong>קישורים:</strong>לכלים שימושיים </li>
+        <li><strong>רשימות וטבלאות:</strong> השוואות, צ'ק-ליסט לפני טיסה ועוד.</li>
+        <li><strong>טפסים:</strong> יצירת קשר והרשמה לניוזלטר.</li>
+        <li><strong>מדיה:</strong> תמונות, וידאו, <em>iframe</em> ו-<em>embed</em>.</li>
+        <li><strong>רספונסיביות:</strong> התאמה ל-3 גדלים לפחות + Media Queries.</li>
+        <li><strong>Grid & Flexbox:</strong> פריסות חכמות ומשולבות.</li>
+      </ul>
+    </section>
+
+    <section class="cards-grid">
+      <article class="card">
+        <img src="https://picsum.photos/seed/beach/600/400" alt="חוף ים">
+        <div class="card-body">
+          <h4>חופשות חוף</h4>
+          <p>מדריכי יעד למסעות שמש וים – תאילנד, יוון, ספרד ועוד.</p>
+          <a class="text-link" href="destinations.html#beaches">קראו עוד</a>
+        </div>
+      </article>
+      <article class="card">
+        <img src="https://picsum.photos/seed/mountain/600/400" alt="הרים">
+        <div class="card-body">
+          <h4>טרקים בהרים</h4>
+          <p>מסלולים מומלצים בהרי האטלס, האלפים וההימלאיה.</p>
+          <a class="text-link" href="destinations.html#treks">קראו עוד</a>
+        </div>
+      </article>
+      <article class="card">
+        <img src="https://picsum.photos/seed/city/600/400" alt="עיר">
+        <div class="card-body">
+          <h4>חופשות עירוניות</h4>
+          <p>אמנות, תרבות וקולינריה – פריז, רומא, בנגקוק ותל אביב.</p>
+          <a class="text-link" href="destinations.html#cities">קראו עוד</a>
+        </div>
+      </article>
+    </section>
+
+    <aside class="cta-aside">
+      <h3>כלים חיצוניים שימושיים</h3>
+      <ol>
+        <li><a href="https://www.wikipedia.org/" target="_blank" rel="noopener">ויקיפדיה</a></li>
+        <li><a href="https://www.lonelyplanet.com/" target="_blank" rel="noopener">Lonely Planet</a></li>
+        <li><a href="https://www.skyscanner.co.il/" target="_blank" rel="noopener">Skyscanner</a></li>
+      </ol>
+      <p>זהו <strong>aside</strong> עם קישורים חיצוניים (3 סוגים)</p>
+    </aside>
+
+    <section class="media-embed">
+      <h3>מפה משולבת</h3>
+      <iframe class="map" src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d2624.736508045017!2d2.2922927156748035!3d48.858373608740364!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x47e66fcc8d7b2b71%3A0x8e5b1e6d4d2d4!2sEiffel%20Tower!5e0!3m2!1she!2sil!4v1610000000000" loading="lazy" title="מפת אייפל"></iframe>
+
+      <!-- <h3>מסמך PDF משובץ (Embed)</h3>
+      <embed src="תיאור הפרויקט.pdf" type="application/pdf" width="100%" height="400" /> -->
+    </section>
+  </main>
+
+  <footer class="site-footer">
+    <nav class="footer-nav">
+      <a href="#top">למעלה</a>
+      <a href="about.html">אודות</a>
+      <a href="contact.html">צור קשר</a>
+    </nav>
+  </footer>
+</body>
+</html>

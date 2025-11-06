@@ -1,0 +1,62 @@
+<!doctype html>
+<html lang="he" dir="rtl">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>טיולים בעולם – צור קשר</title>
+  <link href="https://fonts.googleapis.com/css2?family=Heebo:wght@300;400;600;800&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="styles.css" />
+</head>
+<body>
+  <header class="site-header">
+    <div class="branding">
+      <img src="https://picsum.photos/seed/travel/60/60" alt="" class="logo">
+      <h1>צור קשר</h1>
+    </div>
+    <nav class="navbar">
+      <a href="index.html">בית</a>
+      <a href="destinations.html">יעדים</a>
+      <a href="gallery.html">גלריה</a>
+      <a href="tools.html">כלים</a>
+      <a href="about.html">אודות</a>
+      <a href="contact.html" class="active">צור קשר</a>
+    </nav>
+  </header>
+
+  <main class="content">
+    <form class="contact-form" action="#" method="post">
+      <fieldset>
+        <legend>פרטי קשר</legend>
+        <label>שם מלא
+          <input type="text" name="fullname" placeholder="הדס דונט" required />
+        </label>
+        <label>אימייל
+          <input type="email" name="email" placeholder="name@example.com" required />
+        </label>
+        <label>יעד מועדף
+          <select name="destination">
+            <option value="koh-phangan">קופנגן</option>
+            <option value="rome">רומא</option>
+            <option value="athens">אתונה</option>
+          </select>
+        </label>
+        <fieldset class="inline">
+          <legend>סוג טיול</legend>
+          <label><input type="radio" name="triptype" value="beach" checked> חופים</label>
+          <label><input type="radio" name="triptype" value="city"> עירוני</label>
+          <label><input type="radio" name="triptype" value="trek"> טרק</label>
+        </fieldset>
+        <label class="inline"><input type="checkbox" name="newsletter" checked> צרפו אותי לניוזלטר</label>
+        <label>הודעה
+          <textarea name="message" rows="5" placeholder="ספרו לנו על ההרפתקה שלכם..."></textarea>
+        </label>
+        <button type="submit" class="btn">שליחה</button>
+      </fieldset>
+    </form>
+  </main>
+
+  <footer class="site-footer">
+    <p>© 2025</p>
+  </footer>
+</body>
+</html>
