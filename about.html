@@ -10,7 +10,7 @@
 <body>
   <header class="site-header">
     <div class="branding">
-      <img src="https://picsum.photos/seed/travel/60/60" alt="" class="logo">
+      <img src="https://picsum.photos/seed/travel/60/60" alt="לוגו טיולים" class="logo">
       <h1>אודות</h1>
     </div>
     <nav class="navbar">
@@ -23,14 +23,73 @@
     </nav>
   </header>
 
-  <main class="content">
-    <h2>מי אנחנו</h2>
-    <p></p>
-    <p>הקוד מופרד  <strong>HTML</strong> ו-<strong>CSS</strong>, כולל קישורים פנימיים וחיצוניים, רשימות, טבלאות, טפסים ומדיה.</p>
+  <main class="content" id="top">
+    <!-- פתיח חמוד וקצר -->
+    <section>
+      <h2>מי אנחנו</h2>
+      <p>
+        "טיולים בעולם" נולד מאהבה גדולה לחופשות, לגלות מקומות חדשים
+        ולהפוך את התכנון של הטיול לפשוט, ברור ונעים. המטרה שלנו היא לרכז במקום אחד
+        השראה, מידע וטיפים מעשיים כדי שתוכלו לבחור יעד שמתאים לכם – מבחינת סגנון,
+        עונה ותקציב – ולהתחיל לחלום כבר מהדפדפן.
+      </p>
+    </section>
+
+    <!-- מה יש באתר (משתמש בפריסה הקיימת של features) -->
+    <section class="features" aria-labelledby="about-what-title">
+      <h3 id="about-what-title">מה תמצאו באתר</h3>
+      <ul class="feature-list">
+        <li><strong>יעדים והמלצות:</strong> רעיונות לחופים, טרקים וערים – כולל טיפים קטנים שעושים את ההבדל.</li>
+        <li><strong>גלריית השראה:</strong> תמונות יפות מרחבי העולם שיעזרו "להרגיש" את היעד.</li>
+        <li><strong>כלים שימושיים:</strong> חיפוש טיסות, מלונות ומזג אוויר בלחיצה.</li>
+        <li><strong>טפסים נוחים:</strong> יצירת קשר לקבלת הכוונה או המלצה מותאמת אישית.</li>
+        <li><strong>מידע מסודר:</strong> רשימות, טבלאות והשוואות לניווט קל ומהיר.</li>
+        <li><strong>עיצוב רספונסיבי:</strong> עובד מעולה במחשב, טאבלט ונייד.</li>
+      </ul>
+    </section>
+
+    <!-- איך בנינו – רפרנס טכני קצר להגשה -->
+    <section aria-labelledby="about-tech-title">
+      <h3 id="about-tech-title">איך בנינו את האתר</h3>
+      <p>
+        האתר נבנה בקוד תקני ובמבנה פשוט לשימור ותחזוקה:
+        <strong>HTML</strong> לתוכן ו־<strong>CSS</strong> לעיצוב, עם שימוש ב־
+        <em>Flexbox</em> ו־<em>CSS Grid</em> לפריסות, וב־<em>Media Queries</em> להתאמה לגדלי מסך שונים.
+        שולבו קישורים פנימיים וחיצוניים, טפסים, טבלאות, תמונות, וידאו ו־Maps.
+      </p>
+      <p>
+        דפי המפתח כוללים: דף בית, יעדים, גלריה, כלים, אודות ויצירת קשר.
+        בנוסף, שולבו מודלים (חלונות קופצים) להצגת מידע מורחב בכרטיסים – לחוויית שימוש מודרנית.
+      </p>
+    </section>
+
+    <!-- ערכים/גישה -->
+    <section aria-labelledby="about-values-title">
+      <h3 id="about-values-title">הגישה שלנו</h3>
+      <ul>
+        <li><strong>פשטות:</strong> פחות רעש, יותר תוכן שממש עוזר.</li>
+        <li><strong>נגישות:</strong> כתב ברור, ניגודיות טובה, ותמונות עם <code>alt</code>.</li>
+        <li><strong>דיוק:</strong> מידע תמציתי והפניות לכלים אמינים ועדכניים.</li>
+      </ul>
+    </section>
+
+    <!-- קריאה לפעולה + קישורים -->
+    <aside class="cta-aside" aria-labelledby="about-cta-title">
+      <h3 id="about-cta-title">רוצים לתכנן את החופשה?</h3>
+      <p>
+        התחילו בעיון ביעדים, עברו לגלריה להשראה, ובכל שאלה –
+        <a href="contact.html">צרו איתנו קשר</a>.
+      </p>
+      <ol>
+        <li><a href="destinations.html">עיון ביעדים והמלצות</a></li>
+        <li><a href="gallery.html">גלריית השראה</a></li>
+        <li><a href="tools.html">כלים שימושיים לתכנון</a></li>
+      </ol>
+    </aside>
   </main>
 
   <footer class="site-footer">
-    <p>© 2025</p>
+    <p>© 2025 טיולים בעולם</p>
   </footer>
 </body>
 </html>
