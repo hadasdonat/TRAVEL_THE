@@ -24,62 +24,569 @@
   </header>
 
   <main>
-    <nav class="subnav">
-      <a href="#beaches">חופים</a>
-      <a href="#treks">טרקים</a>
-      <a href="#cities">ערים</a>
-    </nav>
+    <!-- גריד קטגוריות עם תמונות (נשאר בעמוד) -->
+    <section class="category-grid">
+      <!-- חורף/סקי -->
+      <article class="category-card">
+        <button class="cat-btn" data-target="#winter" aria-haspopup="dialog">
+          <img loading="lazy" decoding="async" src=https://upload.wikimedia.org/wikipedia/commons/6/60/Northern_Lights_-_Aurora_Borealis_Ringvass%C3%B8ya_Troms%C3%B8_Norway.jpg" alt="אתר סקי באלפים">
+          <span class="category-title">סקי / חורף</span>
+        </button>
+      </article>
+      <!-- ערים -->
+      <article class="category-card">
+        <button class="cat-btn" data-target="#cities" aria-haspopup="dialog">
+          <img loading="lazy" decoding="async" src="https://upload.wikimedia.org/wikipedia/commons/e/e2/Stockholm_Skyline_At_Night_%2891983391%29.jpeg" alt="עיר אירופית">
+          <span class="category-title">ערים</span>
+        </button>
+      </article>
+      <!-- טרקים -->
+      <article class="category-card">
+        <button class="cat-btn" data-target="#treks" aria-haspopup="dialog">
+          <img loading="lazy" decoding="async" src="https://images.unsplash.com/photo-1501785888041-af3ef285b470?auto=format&fit=crop&w=1200&q=80" alt="הרים ויער">
+          <span class="category-title">טרקים</span>
+        </button>
+      </article>
+      <!-- חופים -->
+      <article class="category-card">
+        <button class="cat-btn" data-target="#beaches" aria-haspopup="dialog">
+          <img loading="lazy" decoding="async" src="https://images.unsplash.com/photo-1507525428034-b723cf961d3e?auto=format&fit=crop&w=1200&q=80" alt="חוף ים">
+          <span class="category-title">חופים</span>
+        </button>
+      </article>
+    </section>
 
-    <section id="beaches">
+    <!-- דיאלוג קטגוריה: מציג את היעדים של הקטגוריה הנבחרת -->
+    <dialog id="categoryDialog" aria-labelledby="cat-title">
+      <button class="dlg-close" aria-label="סגור">×</button>
+      <h3 id="cat-title"></h3>
+      <p id="cat-desc" class="cat-desc"></p>
+      <div id="cat-content"></div>
+      <!-- כפתור "לסקשן המלא בעמוד" הוסר לגמרי -->
+    </dialog>
+
+    <!-- הסקשנים הארוכים (מוסתרים בעמוד עם .catalog-section) -->
+    <!-- חופים -->
+    <section id="beaches" class="catalog-section">
       <h2>חופים</h2>
       <p>בחרו את אי החלומות הבא שלכם.</p>
       <ul class="cards-list">
-        <li>קופנגן, תאילנד</li>
-        <li>קריט, יוון</li>
-        <li>טנריפה, ספרד</li>
+        <li class="card">
+          <span class="card-title">קופנגן, תאילנד</span>
+          <span class="badge price-cheap">זול</span>
+          <button class="info-btn" aria-haspopup="dialog"
+            data-title="קופנגן, תאילנד"
+            data-description="אי טרופי רגוע עם חופים לבנים ומים צלולים."
+            data-points="האד רין|שנורקלינג|סדנאות יוגה|שוק לילה"
+            data-cost-lodging="160" data-cost-food="120" data-cost-transport="40" data-cost-total="320"
+            data-price="cheap">מידע</button>
+        </li>
+        <li class="card">
+           <span class="card-title">כרתים, יוון</span>
+           <span class="badge price-mid">בינוני</span>
+           <button class="info-btn" aria-haspopup="dialog"
+             data-title="כרתים, יוון"
+             data-description="האי הגדול ביוון: חופים קסומים, נופים הרריים, וכפרים ועיירות עתיקות עם נמל ונציאני — כמו חאניה ורתימנו."
+             data-points="חוף אלפוניסי (Elafonissi)|לגונת באלוס (Balos)|עיירות חאניה ורתימנו|קניון סמאריה|מטבח יווני מסורתי"
+             data-cost-lodging="260" data-cost-food="150" data-cost-transport="50" data-cost-total="460"
+             data-price="mid">מידע</button>
+        </li>
+        <li class="card">
+          <span class="card-title">מיקונוס, יוון</span>
+          <span class="badge price-expensive">יקר</span>
+          <button class="info-btn" aria-haspopup="dialog"
+            data-title="מיקונוס, יוון"
+            data-description="אי ים-תיכוני יוקרתי עם חופים לבנים, טחנות רוח איקוניות, חיי לילה תוססים ואווירה יוונית קלאסית."
+            data-points="חוף פרדייז|העיירה מיקונוס|טחנות הרוח|ליטל וניס|מסיבות חוף"
+            data-cost-lodging="420" data-cost-food="210" data-cost-transport="70" data-cost-total="700"
+            data-price="expensive">מידע</button>
+        </li>
+        <li class="card">
+          <span class="card-title">סנטוריני, יוון</span>
+          <span class="badge price-expensive">יקר</span>
+          <button class="info-btn" aria-haspopup="dialog"
+            data-title="סנטוריני, יוון"
+            data-description="אי רומנטי ומפורסם בנופי קלדרה עוצרי נשימה, בתים לבנים עם כיפות כחולות ושקיעות מהיפות בעולם."
+            data-points="העיירות אויה ופירה|שקיעה באויה|חופי וולקניים אדומים ושחורים|סיור יקבים מקומיים"
+            data-cost-lodging="400" data-cost-food="200" data-cost-transport="60" data-cost-total="660"
+            data-price="expensive">מידע</button>
+        </li>
+        <li class="card">
+          <span class="card-title">טנריפה, ספרד</span>
+          <span class="badge price-mid">בינוני</span>
+          <button class="info-btn" aria-haspopup="dialog"
+            data-title="טנריפה, ספרד"
+            data-description="אי קנארי עם נופים וולקניים ואקלים נעים כל השנה."
+            data-points="טיידה|חופים זהובים|לורו פארק|תצפיות לווייתנים"
+            data-cost-lodging="240" data-cost-food="150" data-cost-transport="55" data-cost-total="445"
+            data-price="mid">מידע</button>
+        </li>
+        <li class="card">
+          <span class="card-title">האיים המלדיביים</span>
+          <span class="badge price-expensive">יקר</span>
+          <button class="info-btn" aria-haspopup="dialog"
+            data-title="האיים המלדיביים"
+            data-description="איי לגונה טורקיז, וילות מעל המים ושקט חלומי."
+            data-points="צלילה|שנורקל|ריזורטים|שקיעות"
+            data-cost-lodging="900" data-cost-food="250" data-cost-transport="120" data-cost-total="1270"
+            data-price="expensive">מידע</button>
+        </li>
+        <li class="card">
+          <span class="card-title">זנזיבר, טנזניה</span>
+          <span class="badge price-cheap">זול</span>
+          <button class="info-btn" aria-haspopup="dialog"
+            data-title="זנזיבר, טנזניה"
+            data-description="חופי טורקיז, סירות דאו וסטון טאון ההיסטורית."
+            data-points="נונגווי|פאג׳ה|סיורי תבלינים|אי הצבים"
+            data-cost-lodging="180" data-cost-food="110" data-cost-transport="40" data-cost-total="330"
+            data-price="cheap">מידע</button>
+        </li>
+        <li class="card">
+          <span class="card-title">באלי, אינדונזיה</span>
+          <span class="badge price-cheap">זול</span>
+          <button class="info-btn" aria-haspopup="dialog"
+            data-title="באלי, אינדונזיה"
+            data-description="איים ירוקים, תרבות עשירה וחופי גלישה."
+            data-points="אובוד|צ׳אנגו|אולואטו|מפלי מים"
+            data-cost-lodging="150" data-cost-food="110" data-cost-transport="40" data-cost-total="300"
+            data-price="cheap">מידע</button>
+        </li>
+        <li class="card">
+          <span class="card-title">אלגרבה, פורטוגל</span>
+          <span class="badge price-mid">בינוני</span>
+          <button class="info-btn" aria-haspopup="dialog"
+            data-title="אלגרבה, פורטוגל"
+            data-description="מצוקים, חופים זהובים ועיירות דייגים."
+            data-points="לאגוש|פארו|בן-אג׳יל|שיט למערות"
+            data-cost-lodging="240" data-cost-food="140" data-cost-transport="50" data-cost-total="430"
+            data-price="mid">מידע</button>
+        </li>
+        <li class="card">
+          <span class="card-title">סרדיניה, איטליה</span>
+          <span class="badge price-mid">בינוני</span>
+          <button class="info-btn" aria-haspopup="dialog"
+            data-title="סרדיניה, איטליה"
+            data-description="מים טורקיז ואיים קטנים לשחייה ושנורקל."
+            data-points="קוסטה סמרלדה|קאלה גונונה|לה פלוזה"
+            data-cost-lodging="300" data-cost-food="160" data-cost-transport="60" data-cost-total="520"
+            data-price="mid">מידע</button>
+        </li>
       </ul>
     </section>
 
-    <section id="treks">
+    <!-- טרקים -->
+    <section id="treks" class="catalog-section">
       <h2>טרקים</h2>
       <p>מסלולים למתחילים ומתקדמים.</p>
-      <ol>
-        <li>ANNAPURNA BASE CAMP</li>
-        <li>TOUBKAL</li>
-        <li>TOUR DU MONT BLANC</li>
+      <ol class="cards-list">
+        <li class="card">
+          <span class="card-title">ANNAPURNA BASE CAMP</span>
+          <span class="badge price-cheap">זול</span>
+          <button class="info-btn" aria-haspopup="dialog"
+            data-title="Annapurna Base Camp, נפאל"
+            data-description="מסלול קלאסי בהימלאיה עם נופי פסגות מרהיבים."
+            data-points="6–10 ימים|~4,130 מ׳|כפרים ולודג׳ים|עונות: מרץ–מאי/אוק׳–נוב׳"
+            data-cost-lodging="140" data-cost-food="90" data-cost-transport="40" data-cost-total="270"
+            data-price="cheap">מידע</button>
+        </li>
+        <li class="card">
+          <span class="card-title">TOUBKAL</span>
+          <span class="badge price-cheap">זול</span>
+          <button class="info-btn" aria-haspopup="dialog"
+            data-title="Jebel Toubkal, מרוקו"
+            data-description="הפסגה הגבוהה בצפון אפריקה באטלס הגבוה."
+            data-points="2–3 ימים|יציאה מאימליל|4,167 מ׳|נופים מדבריים"
+            data-cost-lodging="120" data-cost-food="80" data-cost-transport="40" data-cost-total="240"
+            data-price="cheap">מידע</button>
+        </li>
+        <li class="card">
+          <span class="card-title">TOUR DU MONT BLANC</span>
+          <span class="badge price-expensive">יקר</span>
+          <button class="info-btn" aria-haspopup="dialog"
+            data-title="TMB, צרפת/איטליה/שווייץ"
+            data-description="מסלול מעגלי סביב המון בלאן דרך שלוש מדינות."
+            data-points="9–11 ימים|בקתות/גסטהאוסים|נופים אלפיניים|מעברי הרים"
+            data-cost-lodging="420" data-cost-food="220" data-cost-transport="70" data-cost-total="710"
+            data-price="expensive">מידע</button>
+        </li>
+        <li class="card">
+          <span class="card-title">W TREK, פטגוניה</span>
+          <span class="badge price-mid">בינוני</span>
+          <button class="info-btn" aria-haspopup="dialog"
+            data-title="W Trek, טורס דל פיינה, צ׳ילה"
+            data-description="קרחונים, לגונות כחולות וקירות גרניט אייקוניים."
+            data-points="4–5 ימים|מחנות/רפיוג׳ים|דצמ׳–מרץ|רוחות חזקות"
+            data-cost-lodging="260" data-cost-food="160" data-cost-transport="80" data-cost-total="500"
+            data-price="mid">מידע</button>
+        </li>
+        <li class="card">
+          <span class="card-title">KILIMANJARO (Machame)</span>
+          <span class="badge price-mid">בינוני</span>
+          <button class="info-btn" aria-haspopup="dialog"
+            data-title="הר קילימנג׳רו, טנזניה"
+            data-description="הגג של אפריקה – טיפוס הדרגתי במסלול מאצ׳אמה."
+            data-points="6–7 ימים|5,895 מ׳|גובה מצטבר|לינה באוהלים"
+            data-cost-lodging="240" data-cost-food="140" data-cost-transport="90" data-cost-total="470"
+            data-price="mid">מידע</button>
+        </li>
+        <li class="card">
+          <span class="card-title">LAUGAVEGUR, איסלנד</span>
+          <span class="badge price-expensive">יקר</span>
+          <button class="info-btn" aria-haspopup="dialog"
+            data-title="Laugavegur, איסלנד"
+            data-description="הרי ריוליט, מעיינות חמים וקרחונים."
+            data-points="4–5 ימים|בקתות|יוני–ספט׳|מזג אוויר משתנה"
+            data-cost-lodging="420" data-cost-food="220" data-cost-transport="80" data-cost-total="720"
+            data-price="expensive">מידע</button>
+        </li>
+        <li class="card">
+          <span class="card-title">ALTA VIA 1, דולומיטים</span>
+          <span class="badge price-mid">בינוני</span>
+          <button class="info-btn" aria-haspopup="dialog"
+            data-title="Alta Via 1, איטליה"
+            data-description="שביל קלאסי בין רפיוג׳ים בנוף דולומיטים."
+            data-points="8–10 ימים|רפיוג׳ים|יולי–ספט׳|מעברים גבוהים"
+            data-cost-lodging="300" data-cost-food="170" data-cost-transport="60" data-cost-total="530"
+            data-price="mid">מידע</button>
+        </li>
+        <li class="card">
+          <span class="card-title">GR20, קורסיקה</span>
+          <span class="badge price-mid">בינוני</span>
+          <button class="info-btn" aria-haspopup="dialog"
+            data-title="GR20, קורסיקה"
+            data-description="אחד המסלולים הקשוחים באירופה – מסולע ואתגרי."
+            data-points="12–16 ימים|בקתות|יוני–ספט׳|דרוג: קשה"
+            data-cost-lodging="280" data-cost-food="170" data-cost-transport="60" data-cost-total="510"
+            data-price="mid">מידע</button>
+        </li>
       </ol>
     </section>
 
-    <section id="cities">
+    <!-- ערים -->
+    <section id="cities" class="catalog-section">
       <h2>ערים</h2>
-      <table class="table">
-        <caption>השוואת עלויות יומיות (₪) – ממוצע</caption>
-        <thead>
-          <tr><th>עיר</th><th>לינה</th><th>אוכל</th><th>תחבורה</th><th>סה״כ</th></tr>
-        </thead>
-        <tbody>
-          <tr><td>בנגקוק</td><td>180</td><td>120</td><td>40</td><td>340</td></tr>
-          <tr><td>רומא</td><td>350</td><td>180</td><td>60</td><td>590</td></tr>
-          <tr><td>אתונה</td><td>280</td><td>150</td><td>50</td><td>480</td></tr>
-        </tbody>
-      </table>
+      <p>מטרופולינים וקלאסיקות אירופיות.</p>
+      <ul class="cards-list">
+        <li class="card">
+          <span class="card-title">טוקיו, יפן</span>
+          <span class="badge price-expensive">יקר</span>
+          <button class="info-btn" aria-haspopup="dialog"
+            data-title="טוקיו, יפן"
+            data-description="מטרופולין עתידני לצד מסורת ומקדשים."
+            data-points="שיבויה|סנסו-ג׳י|אקיהברה|אוכל רחוב"
+            data-cost-lodging="420" data-cost-food="220" data-cost-transport="60" data-cost-total="700"
+            data-price="expensive">מידע</button>
+        </li>
+        <li class="card">
+          <span class="card-title">רומא, איטליה</span>
+          <span class="badge price-mid">בינוני</span>
+          <button class="info-btn" aria-haspopup="dialog"
+            data-title="רומא, איטליה"
+            data-description="היסטוריה, אמנות וקולינריה באותה נשימה."
+            data-points="קולוסיאום|פורום|פיאצות|גלידה"
+            data-cost-lodging="350" data-cost-food="180" data-cost-transport="60" data-cost-total="590"
+            data-price="mid">מידע</button>
+        </li>
+        <li class="card">
+          <span class="card-title">בנגקוק, תאילנד</span>
+          <span class="badge price-cheap">זול</span>
+          <button class="info-btn" aria-haspopup="dialog"
+            data-title="בנגקוק, תאילנד"
+            data-description="שווקים תוססים ומקדשים מוזהבים."
+            data-points="ארמון המלך|צ׳טוצ׳אק|קוואסאן|מסאז׳ תאילנדי"
+            data-cost-lodging="180" data-cost-food="120" data-cost-transport="40" data-cost-total="340"
+            data-price="cheap">מידע</button>
+        </li>
+        <li class="card">
+          <span class="card-title">ליסבון, פורטוגל</span>
+          <span class="badge price-mid">בינוני</span>
+          <button class="info-btn" aria-haspopup="dialog"
+            data-title="ליסבון, פורטוגל"
+            data-description="גבעות, טראמים וקינוחים אגדה."
+            data-points="בלם|אלפאמה|טראם 28|פסטéis דה בלם"
+            data-cost-lodging="280" data-cost-food="150" data-cost-transport="50" data-cost-total="480"
+            data-price="mid">מידע</button>
+        </li>
+        <li class="card">
+          <span class="card-title">פראג, צ׳כיה</span>
+          <span class="badge price-mid">בינוני</span>
+          <button class="info-btn" aria-haspopup="dialog"
+            data-title="פראג, צ׳כיה"
+            data-description="עיר של מגדלים, גשרים ואגדות."
+            data-points="גשר קארל|שעון אסטרונומי|העיר העתיקה|טירות"
+            data-cost-lodging="260" data-cost-food="140" data-cost-transport="45" data-cost-total="445"
+            data-price="mid">מידע</button>
+        </li>
+        <li class="card">
+          <span class="card-title">ברצלונה, ספרד</span>
+          <span class="badge price-mid">בינוני</span>
+          <button class="info-btn" aria-haspopup="dialog"
+            data-title="ברצלונה, ספרד"
+            data-description="אדריכלות גאודי, ים וחיי לילה."
+            data-points="סגרדה פמיליה|פארק גואל|לה בוקריה|ברצלונטה"
+            data-cost-lodging="330" data-cost-food="170" data-cost-transport="55" data-cost-total="555"
+            data-price="mid">מידע</button>
+        </li>
+        <li class="card">
+          <span class="card-title">אמסטרדם, הולנד</span>
+          <span class="badge price-expensive">יקר</span>
+          <button class="info-btn" aria-haspopup="dialog"
+            data-title="אמסטרדם, הולנד"
+            data-description="תעלות ציוריות, מוזיאונים ורכיבה על אופניים."
+            data-points="רייקסמוזיאום|ואן גוך|יורדן|שיט תעלות"
+            data-cost-lodging="440" data-cost-food="200" data-cost-transport="70" data-cost-total="710"
+            data-price="expensive">מידע</button>
+        </li>
+        <li class="card">
+          <span class="card-title">וינה, אוסטריה</span>
+          <span class="badge price-mid">בינוני</span>
+          <button class="info-btn" aria-haspopup="dialog"
+            data-title="וינה, אוסטריה"
+            data-description="קפה ועוגות, ארמונות ותרבות."
+            data-points="שונברון|סטפנסדום|בלוודר|קפה זאכר"
+            data-cost-lodging="360" data-cost-food="180" data-cost-transport="55" data-cost-total="595"
+            data-price="mid">מידע</button>
+        </li>
+      </ul>
     </section>
 
-    <section aria-labelledby="faq-title">
-      <h2 id="faq-title">שאלות נפוצות</h2>
-      <details>
-        <summary>מתי העונה הטובה לתאילנד?</summary>
-        <p>תלוי באזור: במזרח (קופנגן/קוסמוי) נובמבר–אפריל, בדרום-מערב (פוקט/קראבי) דצמבר–מרץ.</p>
-      </details>
-      <details>
-        <summary>איך מזמינים סים מקומי?</summary>
-        <p>אפשר בשדה התעופה או אונליין מראש – בדקו את התנאים של כל יעד.</p>
-      </details>
+    <!-- חורף/סקי -->
+    <section id="winter" class="catalog-section">
+      <h2>סקי / טיולי חורף</h2>
+      <p>אתרי שלג, אורות הצפון וסקי לכל הרמות.</p>
+      <ul class="cards-list">
+        <li class="card">
+          <span class="card-title">לפלנד, פינלנד</span>
+          <span class="badge price-expensive">יקר</span>
+          <button class="info-btn" aria-haspopup="dialog"
+            data-title="לפלנד, פינלנד"
+            data-description="ארץ השלג, מזחלות כלבים, סנואו־מוביל ואורות הצפון."
+            data-points="רובניאמי|כפר סנטה|ספארי כלבים/איילים|סאונות"
+            data-cost-lodging="520" data-cost-food="230" data-cost-transport="80" data-cost-total="830"
+            data-price="expensive">מידע</button>
+        </li>
+        <li class="card">
+          <span class="card-title">נורבגיה: טרומסה / לופוטן</span>
+          <span class="badge price-expensive">יקר</span>
+          <button class="info-btn" aria-haspopup="dialog"
+            data-title="נורבגיה – טרומסה / לופוטן"
+            data-description="פיורדים קפואים, אורות הצפון ונופים דרמטיים."
+            data-points="טיולי שלג|מרדפי זוהר|סיורי לווייתנים|כפרי דייגים"
+            data-cost-lodging="520" data-cost-food="230" data-cost-transport="70" data-cost-total="820"
+            data-price="expensive">מידע</button>
+        </li>
+        <li class="card">
+          <span class="card-title">צרמט, שווייץ</span>
+          <span class="badge price-expensive">יקר</span>
+          <button class="info-btn" aria-haspopup="dialog"
+            data-title="Zermatt, שווייץ"
+            data-description="כפר סקי ללא מכוניות למרגלות המטרהורן."
+            data-points="גלישה נרחבת|נופים איקוניים|אפרה-סקי|קרחון מטרוהורן"
+            data-cost-lodging="600" data-cost-food="240" data-cost-transport="80" data-cost-total="920"
+            data-price="expensive">מידע</button>
+        </li>
+        <li class="card">
+          <span class="card-title">ואל תורנס, צרפת</span>
+          <span class="badge price-expensive">יקר</span>
+          <button class="info-btn" aria-haspopup="dialog"
+            data-title="Val Thorens, צרפת"
+            data-description="האתר הגבוה באירופה – חלק מ־Les 3 Vallées."
+            data-points="שלג יציב|מסלולים לכל הרמות|פארק שלג|חיי לילה"
+            data-cost-lodging="480" data-cost-food="220" data-cost-transport="70" data-cost-total="770"
+            data-price="expensive">מידע</button>
+        </li>
+        <li class="card">
+          <span class="card-title">בנסקו, בולגריה</span>
+          <span class="badge price-mid">בינוני</span>
+          <button class="info-btn" aria-haspopup="dialog"
+            data-title="Bansko, בולגריה"
+            data-description="אתר משתלם למתחילים וממשיכים."
+            data-points="מחירים נוחים|שיעורים|אפרה-סקי|עיירה עתיקה"
+            data-cost-lodging="260" data-cost-food="150" data-cost-transport="60" data-cost-total="470"
+            data-price="mid">מידע</button>
+        </li>
+        <li class="card">
+          <span class="card-title">ניסקו, יפן</span>
+          <span class="badge price-expensive">יקר</span>
+          <button class="info-btn" aria-haspopup="dialog"
+            data-title="Niseko, יפן"
+            data-description="שלג אבקתי (Japow) ותרבות אונסן."
+            data-points="Powder|מסלולים רחבים|אונסן|נוף להר יוטיי"
+            data-cost-lodging="520" data-cost-food="230" data-cost-transport="70" data-cost-total="820"
+            data-price="expensive">מידע</button>
+        </li>
+        <li class="card">
+          <span class="card-title">סנט מוריץ, שווייץ</span>
+          <span class="badge price-expensive">יקר</span>
+          <button class="info-btn" aria-haspopup="dialog"
+            data-title="St. Moritz, שווייץ"
+            data-description="סקי יוקרתי, אגמים קפואים ואווירה אלפינית."
+            data-points="מסלולים ארוכים|אירועי חורף|נופים|קניות"
+            data-cost-lodging="600" data-cost-food="240" data-cost-transport="90" data-cost-total="930"
+            data-price="expensive">מידע</button>
+        </li>
+      </ul>
     </section>
+
+    <!-- דיאלוג מידע משותף לכל הכפתורים + עלויות -->
+    <dialog id="infoDialog" aria-labelledby="dlg-title">
+      <button class="dlg-close" aria-label="סגור">×</button>
+      <h3 id="dlg-title"></h3>
+      <p id="dlg-desc"></p>
+      <ul id="dlg-list"></ul>
+
+      <div id="dlg-costs" hidden>
+        <h4 style="margin:.75rem 0 .25rem">עלויות משוערות (₪ ליום)</h4>
+        <table class="mini">
+          <tbody>
+            <tr><th>לינה</th><td id="cost-lodging"></td></tr>
+            <tr><th>אוכל</th><td id="cost-food"></td></tr>
+            <tr><th>תחבורה</th><td id="cost-transport"></td></tr>
+            <tr class="total"><th>סה״כ</th><td id="cost-total"></td></tr>
+          </tbody>
+        </table>
+        <p id="price-level" class="price-note"></p>
+      </div>
+    </dialog>
   </main>
+
+  <section aria-labelledby="faq-title" class="content">
+    <h2 id="faq-title">שאלות נפוצות</h2>
+    <details>
+      <summary>מתי העונה הטובה לתאילנד?</summary>
+      <p>תלוי באזור: במזרח (קופנגן/קוסמוי) נובמבר–אפריל, בדרום-מערב (פוקט/קראבי) דצמבר–מרץ.</p>
+    </details>
+    <details>
+      <summary>איך מזמינים סים מקומי?</summary>
+      <p>אפשר בשדה התעופה או אונליין מראש – בדקו את התנאים של כל יעד.</p>
+    </details>
+  </section>
 
   <footer class="site-footer">
     <p>© 2025</p>
   </footer>
+
+  <script>
+  (() => {
+    /* ========= דיאלוג "מידע" לכל יעד ========= */
+    const infoDlg = document.getElementById('infoDialog');
+    const titleEl = document.getElementById('dlg-title');
+    const descEl  = document.getElementById('dlg-desc');
+    const listEl  = document.getElementById('dlg-list');
+
+    const costsBox = document.getElementById('dlg-costs');
+    const cLod = document.getElementById('cost-lodging');
+    const cFood = document.getElementById('cost-food');
+    const cTrans = document.getElementById('cost-transport');
+    const cTotal = document.getElementById('cost-total');
+    const priceNote = document.getElementById('price-level');
+
+    const PRICE_TEXT = { cheap:'טווח מחיר: זול', mid:'טווח מחיר: בינוני', expensive:'טווח מחיר: יקר' };
+
+    function openInfoDialog(btn){
+      if (!infoDlg || !btn) return;
+
+      titleEl.textContent = btn.dataset.title || 'מידע';
+      descEl.textContent  = btn.dataset.description || '';
+
+      // נקודות
+      listEl.innerHTML = '';
+      (btn.dataset.points || '')
+        .split('|').map(s => s.trim()).filter(Boolean)
+        .forEach(p => { const li = document.createElement('li'); li.textContent = p; listEl.appendChild(li); });
+
+      // עלויות
+      const lodging   = btn.dataset.costLodging || '';
+      const food      = btn.dataset.costFood || '';
+      const transport = btn.dataset.costTransport || '';
+      let total       = btn.dataset.costTotal || '';
+      const anyCost   = lodging || food || transport || total;
+
+      if (anyCost) {
+        const n = x => Number(String(x).replace(/[^\d.]/g,'')) || 0;
+        cLod.textContent   = lodging   || '—';
+        cFood.textContent  = food      || '—';
+        cTrans.textContent = transport || '—';
+        if (!total) total = n(lodging) + n(food) + n(transport);
+        cTotal.textContent = total || '—';
+        priceNote.textContent = PRICE_TEXT[(btn.dataset.price||'').toLowerCase()] || '';
+        costsBox.hidden = false;
+      } else {
+        costsBox.hidden = true;
+        priceNote.textContent = '';
+      }
+
+      if (typeof infoDlg.showModal === 'function') infoDlg.showModal();
+      else infoDlg.setAttribute('open','');
+    }
+
+    infoDlg?.querySelector('.dlg-close')?.addEventListener('click', () => infoDlg.close());
+    infoDlg?.addEventListener('cancel', () => infoDlg.close());
+    infoDlg?.addEventListener('click', (e) => {
+      const r = infoDlg.getBoundingClientRect();
+      const inside = r.top<=e.clientY && e.clientY<=r.bottom && r.left<=e.clientX && e.clientX<=r.right;
+      if (!inside) infoDlg.close();
+    });
+
+    // Delegation לכפתורי "מידע"
+    document.addEventListener('click', (e) => {
+      const infoBtn = e.target.closest('.info-btn');
+      if (infoBtn) {
+        e.preventDefault();
+        openInfoDialog(infoBtn);
+      }
+    });
+
+    /* ========= דיאלוג קטגוריות (אריחים) ========= */
+    const catDlg    = document.getElementById('categoryDialog');
+    const catTitle  = document.getElementById('cat-title');
+    const catDesc   = document.getElementById('cat-desc');
+    const catContent= document.getElementById('cat-content');
+
+    const META = {
+      '#beaches': { title: ' חופים',      desc: 'איים, מפרצים וחופים טורקיז – כל היעדים הקיציים במקום אחד.' },
+      '#treks':   { title: ' טרקים',       desc: 'מסלולי הליכה בהרים ובשמורות – מכל הרמות והעונות.' },
+      '#cities':  { title: ' ערים',        desc: 'מטרופולינים, היסטוריה, תרבות ואוכל.' },
+      '#winter':  { title: ' סקי / חורף',  desc: 'אורות הצפון, אתרי סקי ועיירות אלפיניות מושלגות.' }
+    };
+
+    function openCategoryDialog(targetSel){
+      if (!catDlg) return;
+      const sec = document.querySelector(targetSel);
+      if (!sec) return;
+
+      const meta = META[targetSel] || { title: sec.querySelector('h2')?.textContent || 'קטגוריה', desc: '' };
+      catTitle.textContent = meta.title;
+      catDesc.textContent  = meta.desc;
+
+      // משכפלים את הרשימה של הקטגוריה
+      catContent.innerHTML = '';
+      const list = sec.querySelector('.cards-list');
+      if (list) {
+        const clone = list.cloneNode(true);
+        catContent.appendChild(clone);
+      } else {
+        catContent.innerHTML = '<p style="color:#9fb3c8">לא נמצאו כרטיסים להצגה.</p>';
+      }
+
+      if (typeof catDlg.showModal === 'function') catDlg.showModal();
+      else catDlg.setAttribute('open','');
+    }
+
+    // פתיחת דיאלוג בלחיצה על אריח
+    document.querySelectorAll('.cat-btn').forEach(btn => {
+      btn.addEventListener('click', () => openCategoryDialog(btn.dataset.target));
+    });
+
+    // סגירת דיאלוג קטגוריה
+    catDlg?.querySelector('.dlg-close')?.addEventListener('click', () => catDlg.close());
+    catDlg?.addEventListener('cancel', () => catDlg.close());
+    catDlg?.addEventListener('click', (e) => {
+      const r = catDlg.getBoundingClientRect();
+      const inside = r.top<=e.clientY && e.clientY<=r.bottom && r.left<=e.clientX && e.clientX<=r.right;
+      if (!inside) catDlg.close();
+    });
+  })();
+  </script>
 </body>
 </html>
