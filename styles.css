@@ -21,7 +21,13 @@ a:hover{opacity:.9}
   border-bottom:1px solid rgba(148,163,184,.2);
   position:sticky; top:0; z-index:100;
 }
-.site-footer{position:static; border-top:1px solid rgba(148,163,184,.2); margin-top:3rem}
+
+.site-footer
+{
+  position:static;
+   border-top:1px solid rgba(148,163,184,.2); 
+   margin-top:3rem
+  }
 
 .branding{display:flex; align-items:center; gap:.75rem; padding:1rem 1.25rem}
 .logo{border-radius:14px}
@@ -38,8 +44,17 @@ a:hover{opacity:.9}
 .text-link{color:var(--accent-2); text-decoration:none}
 
 .features{padding:1rem 2rem}
-.feature-list{display:grid; grid-template-columns:repeat(3,1fr); gap:.75rem}
-.feature-list li{background:rgba(17,24,39,.6); border:1px solid rgba(148,163,184,.2); border-radius:14px; padding:1rem}
+.feature-list
+{ 
+list-style: none;
+display:grid; grid-template-columns:repeat(3,1fr); gap:.75rem
+}
+.feature-list li {
+  background:rgba(17,24,39,.6);
+   border:1px solid rgba(148,163,184,.2);
+    border-radius:14px;
+     padding:1.2rem 2rem
+}
 
 .cards-grid{display:grid; grid-template-columns:repeat(3,1fr); gap:1.25rem; padding:1.5rem 2rem}
 .card{background:var(--card); border:1px solid rgba(148,163,184,.2); border-radius:18px; overflow:hidden; transform:translateY(0); transition:transform .2s ease}
@@ -97,126 +112,3 @@ a:hover{opacity:.9}
   .tool-grid{grid-template-columns:1fr}
   .navbar{gap:.25rem}
 }
-
-.tool-icon {
-  width: 42px;
-  height: 42px;
-  margin-bottom: .5rem;
-  opacity: .95;
-}
-
-.tool-card {
-  text-align: center;
-}
-
-/* תגיות מחיר */
-.badge{
-  display:inline-block; margin-inline-start:.5rem; padding:.15rem .5rem;
-  font-size:.8rem; border-radius:.6rem; border:1px solid rgba(255,255,255,.15);
-  background:rgba(255,255,255,.06); color:#e5e7eb;
-}
-.price-cheap{  border-color:#10b981; background:rgba(16,185,129,.15);  color:#c7f9e8; }
-.price-mid{    border-color:#f59e0b; background:rgba(245,158,11,.15);   color:#ffe6ba; }
-.price-expensive{border-color:#ef4444; background:rgba(239,68,68,.15); color:#ffd1d1; }
-
-/* טבלת עלויות קטנה בתוך הדיאלוג */
-dialog .mini{
-  width:100%; border-collapse:collapse; background:rgba(17,24,39,.5);
-  border-radius:12px; overflow:hidden; margin:.25rem 0 .5rem;
-}
-dialog .mini th, dialog .mini td{
-  padding:.45rem .6rem; border-bottom:1px solid rgba(148,163,184,.2); text-align:right;
-}
-dialog .mini tr.total th, dialog .mini tr.total td{
-  font-weight:700; background:rgba(148,163,184,.12);
-}
-.price-note{ margin:.4rem 0 0; color:#9fb3c8; }
-/* גריד קטגוריות עם תמונות */
-.category-grid{
-  display:grid;
-  grid-template-columns:repeat(4,1fr);
-  gap:1rem;
-  padding:1rem 2rem;
-}
-@media(max-width:1024px){ .category-grid{ grid-template-columns:repeat(2,1fr); } }
-@media(max-width:768px){ .category-grid{ grid-template-columns:1fr; } }
-
-.category-card{ position:relative; border-radius:18px; overflow:hidden;background:#0b1320; min-height:220px;}
-.category-card img{ width:100%; height:220px; object-fit:cover; display:block; filter:brightness(.88); transition:transform .35s ease;}
-.category-card .cat-btn{
-  display:block;
-  position:relative;
-  width:100%;
-  padding:0;
-  margin:0;
-  border:0;
-  background:transparent;
-  cursor:pointer;
-}
-.category-card .cat-btn:focus-visible{
-  outline:2px solid var(--accent);
-  outline-offset:3px;
-}
-
-.category-title{
-  position:absolute; inset-inline-start:1rem; inset-block-end:.8rem;
-  background:rgba(0,0,0,.35); padding:.35rem .6rem; border-radius:.6rem;
-  border:1px solid rgba(255,255,255,.18); color:#fff; font-weight:700;
-}
-
-/* דיאלוג הקטגוריה */
-#categoryDialog{
-  max-width:min(920px, 92vw);
-  border:1px solid rgba(148,163,184,.25);
-  border-radius:16px; padding:1rem 1.25rem; background:#0f172a; color:#e5e7eb;
-}
-#categoryDialog::backdrop{ backdrop-filter:blur(3px); background:rgba(0,0,0,.35); }
-#categoryDialog .dlg-close{
-  position:absolute; inset-inline-start:.75rem; inset-block-start:.5rem;
-  background:transparent; border:0; color:#e5e7eb; font-size:1.4rem; cursor:pointer;
-}
-#categoryDialog h3{ margin:.2rem 0 .4rem; }
-#categoryDialog .cat-desc{ color:#9fb3c8; margin:.1rem 0 1rem; }
-#categoryDialog .cat-actions{ margin-top:.75rem; text-align:end; }
-
-/* בתוך הדיאלוג – משתמשים באותם כרטיסים קיימים שלך */
-#categoryDialog .cards-list{
-  display:grid; gap:.75rem;
-  grid-template-columns:repeat(2,minmax(0,1fr));
-}
-@media(min-width:1024px){
-  #categoryDialog .cards-list{ grid-template-columns:repeat(3,minmax(0,1fr)); }
-}
-
-/* אריחי קטגוריות – הובר עדין + יישור גובה */
-.category-card img{
-  width:100%;
-  height:220px;          /* גובה אחיד לכל האריחים */
-  object-fit:cover;
-  display:block;
-  transition:transform .4s ease;  /* אפקט עדין */
-}
-.category-card:hover img{ transform:scale(1.03); }
-
-/* דיאלוג "מידע" – שיהיה מעוצב כמו דיאלוג הקטגוריות */
-#infoDialog{
-  max-width:min(760px, 92vw);
-  border:1px solid rgba(148,163,184,.25);
-  border-radius:16px;
-  padding:1rem 1.25rem;
-  background:#0f172a;
-  color:#e5e7eb;
-}
-#infoDialog::backdrop{ backdrop-filter:blur(3px); background:rgba(0,0,0,.35); }
-#infoDialog .dlg-close{
-  position:absolute; inset-inline-start:.75rem; inset-block-start:.5rem;
-  background:transparent; border:0; color:#e5e7eb; font-size:1.4rem; cursor:pointer;
-}
-
-/* רשימות כרטיסים בתוך דיאלוג – גריד נוח */
-#infoDialog ul, #categoryDialog .cards-list{
-  list-style:none;     /* בלי נקודות */
-  padding:0;
-}
-
-.catalog-section{ display:none; }  /* מסתיר את הסקשנים הארוכים בעמוד */
